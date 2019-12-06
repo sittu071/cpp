@@ -32,3 +32,13 @@ Return value
 synchronization state before the call to the function
 */
 /******************************Example*******************************/
+#include <iostream>
+#include <cstdio>
+ 
+int main()
+{
+    std::ios::sync_with_stdio(false);
+    std::cout << "a\n";
+    std::printf("b\n");
+    std::cout << "c\n";
+}
