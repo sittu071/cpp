@@ -42,3 +42,6 @@ int main()
     std::printf("b\n");
     std::cout << "c\n";
 }
+
+
+/* more details on https://www.geeksforgeeks.org/fast-io-for-competitive-programming/ */
