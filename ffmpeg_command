@@ -1,0 +1,2 @@
+//command to convert an yuv format data into the mp4 file
+ffmpeg -f rawvideo -vcodec rawvideo -s 1920x1080 -r 25 -pix_fmt yuv420p -i viss_out.yuv -c:v libx264 -preset slow -qp 0 sample_cif.mp4
