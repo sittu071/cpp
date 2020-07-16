@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string convertToOctal(string str)
+{
+    int i = 0;
+    string octval = "";
+    while(str[i] != '\0')
+    {
+        string sub = str.substr(i,3);
+        int temp = 0;
+        for(int j = 0;j<sub.length();j++)
+        {
+            if(sub[j] == 'r')
+            {
+                temp = temp + 4;
+            }
+
+            if(sub[j] == 'w')
+            {
+                temp = temp + 2;
+            }
+
+            if(sub[j] == 'x')
+            {
+                temp = temp + 1;
+            }
+
+        }
+        i = i + 3;
+        octval = octval + to_string(temp);
+    }
+    return octval;
+
+}
+
+int main()
+{
+    cout<<convertToOctal("rwxrwxrwx");
+    return 0;
+}
