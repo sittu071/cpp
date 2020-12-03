@@ -2,7 +2,7 @@
 using namespace std;
 
 template<typename T>
-void print(T t)
+void print(const T& t)
 {
     cout<<t<<endl;
 
