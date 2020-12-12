@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1607777183 source:d:\git\cpp\duplicateelementinvector\main.cpp
+	<iostream>
+	<vector>
+	<map>
+
