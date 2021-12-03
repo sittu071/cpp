@@ -1,3 +1,5 @@
+/* code demonstrate to use of virtual functio */
+
 #include<iostream>
 
 using  namespace std;
