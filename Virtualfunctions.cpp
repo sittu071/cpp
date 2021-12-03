@@ -1,4 +1,4 @@
-/* code demonstrate to use of virtual functio */
+/* code demonstrate to use of virtual function */
 
 #include<iostream>
 
