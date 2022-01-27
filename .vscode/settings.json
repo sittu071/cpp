@@ -1,3 +1,16 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "thread": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "iostream": "cpp",
+        "typeindex": "cpp",
+        "typeinfo": "cpp",
+        "iosfwd": "cpp",
+        "sstream": "cpp",
+        "functional": "cpp",
+        "istream": "cpp",
+        "unordered_map": "cpp"
+    }
 }
