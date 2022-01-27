@@ -2,14 +2,12 @@
 // is no virtual function used in
 // the Base class
 //https://www.learncpp.com/cpp-tutorial/dynamic-casting/
-//When dealing with polymorphism, you’ll often encounter cases where you have a pointer to a base class, but you want to access some information that exists only in a derived class.
+//When dealing with polymorphism, you’ll often encounter 
+//cases where you have a pointer to a base class,
+// but you want to access some information that exists only in a derived class.
 #include <iostream>
 #include <string>
-
 using namespace std;
-
-#include <iostream>
-#include <string>
 
 class Base
 {
