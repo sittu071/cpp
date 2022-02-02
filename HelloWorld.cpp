@@ -1,28 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
+C++ 11 Smart pointers : unique_ptr tutorial and example
+// unique pointer is a smart pointer. which 
 
-int pivotIndex(vector<int>& nums) {
-        int total_sum = 0;
-        for(int i = 0;i<nums.size();i++)
-            total_sum = total_sum + nums[i];
-        cout<<total_sum<<endl;
-
-        int left_sum = 0;
-        for(int i = 0;i<nums.size();i++)
-        {
-            if(i!=0) left_sum = left_sum + nums[i -1];
-            if(total_sum - left_sum - nums[i] == left_sum) return i;
-            
-        }
-        return -1;
-        
-    }
+class Base
+{
+    public:
+    Base(){cout<<"Base class constructor\n";}
+};
 int main()
 {
-    vector<int> num = {1,7,3,6,5,6};
-    int res = pivotIndex(num);
-    cout<<res;
+    unique_ptr<Base> unPtr = make_unique<Base>();
     return 0;
 }
- 
-

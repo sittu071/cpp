@@ -1,1 +1,8 @@
+1. pass by reference is defined as referring to the address 
+of the values that are passed as the arguments to the function.
+
+2. pass by reference is also known as pass by the address of the values declared in the arguments in the calling 
+function relative to the formal arguments of the called function.
+
+3. if we use the “const” keyword, we cannot modify so when
 
