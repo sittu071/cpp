@@ -1,0 +1,2 @@
+((\r?\n|\r)\d*)+(\r?\n|\r) -> searching multiple line
+exec[\S\s\r]*?; -> searching statement starting with exec and end with ;
