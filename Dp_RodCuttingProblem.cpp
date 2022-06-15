@@ -1,3 +1,30 @@
+/*========================================= Recursive Approach ===================================================================*/
+// CPP program for above approach
+#include <iostream>
+using namespace std;
+
+int cutRod(int price[], int n)
+{
+   if(n <= 0)
+     return 0;
+   int max_val = INT_MIN; //set maximum value to negative infinity
+   for(int i = 0; i<n; ++i)
+     max_val = max(max_val, price[i] + cutRod(price, n-i-1));
+   return max_val;
+}
+
+
+/* Driver program to
+test above functions */
+int main()
+{
+	int price[] = { 1, 5, 8, 9, 10, 17, 17, 20 };
+	int n = sizeof(price) / sizeof(price[0]);
+	cout << "Maximum obtained value is "
+		<< cutRod(price, n) << endl;
+}
+
+
 // CPP program for above approach
 #include <iostream>
 using namespace std;
