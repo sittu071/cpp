@@ -3,46 +3,42 @@
 #include <mutex>
 #include <condition_variable>
 
-std::mutex mtx;
-std::condition_variable cv;
-bool isOddPrinted = false;
+std::mutex mu;
+std::condition_variable cond;
+int count = 1;
 
-void printEven(int start, int end)
+void PrintOdd()
 {
-    for (int i = start; i <= end; i += 2)
+    for(; count < 100;)
     {
-        std::unique_lock<std::mutex> lock(mtx);
-        cv.wait(lock, [] { return !isOddPrinted; });
-        std::cout << "Even: " << i << std::endl;
-        isOddPrinted = true;
-        lock.unlock();
-        cv.notify_one();
+        std::unique_lock<std::mutex> locker(mu);
+        cond.wait(locker,[](){ return (count%2 == 1); });
+        std::cout << "From Odd:    " << count << std::endl;
+        count++;
+        locker.unlock();
+        cond.notify_all();
     }
+
 }
 
-void printOdd(int start, int end)
+void PrintEven()
 {
-    for (int i = start; i <= end; i += 2)
+    for(; count < 100;)
     {
-        std::unique_lock<std::mutex> lock(mtx);
-        cv.wait(lock, [] { return isOddPrinted; });
-        std::cout << "Odd: " << i << std::endl;
-        isOddPrinted = false;
-        lock.unlock();
-        cv.notify_one();
+        std::unique_lock<std::mutex> locker(mu);
+        cond.wait(locker,[](){ return (count%2 == 0); });
+        std::cout << "From Even: " << count << std::endl;
+        count++;
+        locker.unlock();
+        cond.notify_all();
     }
 }
 
 int main()
 {
-    int start = 1;
-    int end = 10;
-
-    std::thread t1(printEven, start, end);
-    std::thread t2(printOdd, start, end);
-
+    std::thread t1(PrintOdd);
+    std::thread t2(PrintEven);
     t1.join();
     t2.join();
-
     return 0;
 }
